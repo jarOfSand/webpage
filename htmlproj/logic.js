@@ -18,3 +18,26 @@ function SetPower(powerSlot, powerIndex){
     var powerStr = powerDescriptions[powerIndex];
     $('#powerDescription'+powerSlot).html(powerStr);
 }
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+function toggleNav() {
+  var width = $('#mySidenav').width();
+  console.log(typeof width)
+  if(width === 0){
+    //$('#mySidenav').width('250px');
+    document.getElementById("mySidenav").style.width = "250px";
+    console.log('true')
+  }
+  else{
+    //$('#mySidenav').width('0');
+    document.getElementById("mySidenav").style.width = "0";
+    console.log('false')
+  }
+}

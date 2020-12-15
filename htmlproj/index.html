@@ -12,16 +12,19 @@
 </head>
 
 <body>
-  <header>
-    <h1></h1>
-  </header>
+  <div id="mySidenav" class="sidenav">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- <span class="navButton" onclick="openNav()">&#9776;</span> -->
+  <span class="navButton px-3 py-1" onclick="toggleNav()">&#9776;</span>
 
   <div class="d-flex flex-row">
     <button type="button" class="btn btn-primary p-2 m-2" onclick="SetRandomPower('1')">Random Power</button>
-  
-  
-  
-    <div class="dropdown">
+      <div class="dropdown">
       <button class="btn btn-info dropdown-toggle p-2 my-2 mr-4" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Select Power
       </button>
@@ -39,9 +42,6 @@
     </div>
     <div class="p-2 m-2 bg-secondary" id="powerDescription1">---</div>
   </div>
-
-
-
   <div class="d-flex flex-row">
     <button type="button" class="btn btn-primary p-2 m-2" onclick="SetRandomPower('2')">Random Power</button>
 
