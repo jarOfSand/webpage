@@ -1,5 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from 'images/logo.svg';
+import 'styles/App.css';
+import TritonPower from 'components/TritonPower.js';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           Learn React
         </a>
       </header>
+      <TritonPower />
+      <TritonPower />
     </div>
   );
 }
