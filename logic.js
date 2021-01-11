@@ -12,11 +12,15 @@ var powerDescriptions = [
 function SetRandomPower(powerSlot){
     var powerStr = powerDescriptions[Math.floor((Math.random() * 8))];
     $('#powerDescription'+powerSlot).html(powerStr);
+
+    SendMessageToDiscord(powerStr);
 }
 
 function SetPower(powerSlot, powerIndex){
     var powerStr = powerDescriptions[powerIndex];
     $('#powerDescription'+powerSlot).html(powerStr);
+
+    SendMessageToDiscord(powerStr);
 }
 
 function openNav() {
@@ -41,3 +45,31 @@ function toggleNav() {
     console.log('false')
   }
 }
+
+// test channel url    https://discordapp.com/api/webhooks/798018056357019658/3xpYY3CJh4cn4O8Wqdk0IAr2bjrFjk4gd0PEmdQWE0g9ahOLpVedSoPg3STvzAt8wFzn
+// dennys roll channel https://discord.com/api/webhooks/798036724709064724/iZXqfU4qsmdzsAA3sm1F8DapTwHQwM2hGryVcLw32aEst8T6JMjChGiPFQMO-supXxIg
+function SendMessageToDiscord(message) {
+  var request = new XMLHttpRequest();
+  //request.open("POST", "https://discordapp.com/api/webhooks/798018056357019658/3xpYY3CJh4cn4O8Wqdk0IAr2bjrFjk4gd0PEmdQWE0g9ahOLpVedSoPg3STvzAt8wFzn"); //ktown
+  request.open("POST", "https://discord.com/api/webhooks/798036724709064724/iZXqfU4qsmdzsAA3sm1F8DapTwHQwM2hGryVcLw32aEst8T6JMjChGiPFQMO-supXxIg"); //denny's
+
+  request.setRequestHeader('Content-type', 'application/json');
+
+  var params = {
+    username: "VinceBot",
+    avatar_url: "",
+    content: message
+  }
+
+  request.send(JSON.stringify(params));
+}
+
+function RollD6(){
+  var result = Math.floor((Math.random() * 6)) + 1;
+  console.log(result);
+
+  $('#rollOutput').val('...calculating...');
+  setTimeout(() => {$('#rollOutput').val(result);}, (1000));
+  
+}
+
